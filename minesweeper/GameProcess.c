@@ -4,7 +4,6 @@
 // Initial Code written on :- 5th November 2015,
 // Finallized on the 14th of November, 2015.
 // Final Review done on the 16th of November, 2015.
-#pragma comment(linker, "/nodefaultlib:oldnames.lib")
 
 #include<stdio.h>
 #include<conio.h>
@@ -37,8 +36,6 @@ void DisplayMatrix2(int[][SIZE]);
 void DisplayMatrix(char[][SIZE][2]);
 
 
-
-int temp = 1;
 int g_maxNoOfFlags = 0; //global variable declaration
 
 void main()
@@ -102,20 +99,20 @@ void main()
 //displays the slot in colour   
 void RevealSlot(char chInterfaceMatrix[][SIZE][2], int i, int j)
 {
-	SelectColour(temp);
+	SelectColour(BoxColor);
 	printf("|");
 	if (chInterfaceMatrix[i][j][0] == '*')   
 	{
 		if (chInterfaceMatrix[i][j][1] == NOTSELECTION)
 		{
-			SelectColour(240);
+			SelectColour(MineFieldElementColor);
 		}
 		else
 		{
-			SelectColour(180);
+			SelectColour(HoverSelectionColor);
 		}
 		printf("  %c  ", chInterfaceMatrix[i][j][0]);
-		SelectColour(15);
+		SelectColour(BackGroundColor);
 	}
 	else
 	{
@@ -123,34 +120,34 @@ void RevealSlot(char chInterfaceMatrix[][SIZE][2], int i, int j)
 		{
 			if (chInterfaceMatrix[i][j][1] == NOTSELECTION)
 			{
-				SelectColour(156);
+				SelectColour(FlagColor);
 			}
 			else
 			{
-				SelectColour(180);
+				SelectColour(HoverSelectionColor);
 			}
 			
 			printf("  %c  ", chInterfaceMatrix[i][j][0]);
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 		}
 		else
 		{
 			
 			if (chInterfaceMatrix[i][j][1] == NOTSELECTION)
 			{
-				SelectColour(208);
+				SelectColour(RevealedMinesFieldColor);
 			}
 			else
 			{
-				SelectColour(180);
+				SelectColour(HoverSelectionColor);
 			}
 			printf("  %c  ", chInterfaceMatrix[i][j][0]);
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 		}
 	}
-	SelectColour(temp);
+	SelectColour(BoxColor);
 	printf("|");
-	SelectColour(15);
+	SelectColour(BackGroundColor);
 }
 
 //function to process Level choice
@@ -283,7 +280,7 @@ void UpdateField(int nMinefield[][SIZE])
 // function stores input from the user
 coord RecieveInput(coord input)
 {
-	printf("\n\n ENTER THE ACTION %d\ns for select\nf for flag \nr for reset flag\ne for exit from current game\n(use arrow keys to navigate through MineField )\n",temp);
+	printf("\n\n ENTER THE ACTION %d\ns for select\nf for flag \nr for reset flag\ne for exit from current game\n(use arrow keys to navigate through MineField )\n",BoxColor);
 	do
 	{
 		input.action = GetSelectedInput();
@@ -436,13 +433,13 @@ int ProcessInput(coord input, int nMinefield[][SIZE], char chInterfaceMatrix[][S
 void DisplayMatrix(char chInterfaceMatrix[][SIZE][2])
 {
 	int i, j;
-	SelectColour(temp);
+	SelectColour(BoxColor);
 
 	printf("\t------------------------------------------------------------------------\n");
 
 	for (i = 0; i < SIZE; i++)
 	{
-		SelectColour(temp);
+		SelectColour(BoxColor);
 		printf("\t|");   //displays row number
 
 		for (j = 0; j < SIZE; j++)
@@ -458,11 +455,11 @@ void DisplayMatrix(char chInterfaceMatrix[][SIZE][2])
 				RevealSlot(chInterfaceMatrix, i, j);
 			}
 		}
-		SelectColour(temp);
+		SelectColour(BoxColor);
 		printf("|\n");
 		printf("\t------------------------------------------------------------------------\n");
-	}temp++;
-	SelectColour(15);
+	}
+	SelectColour(BackGroundColor);
 }
 
 //diplays solution matrix

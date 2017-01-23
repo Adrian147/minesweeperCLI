@@ -51,7 +51,7 @@ void WelcomeScreen(void)
 
 		int nLagg = 1000;
 
-		//system("COLOR 1F");
+		
 
 		CursorPosition(0,0);
 					
@@ -190,14 +190,14 @@ int SelectLevel(void)
 
 		if (nCurrent == 1) 
 		{
-			SelectColour(206);
+			SelectColour(SelectedOptionColor);
 			CursorPosition(-10, -3);
 			printf(" _______ _______ _______ ___ ___ \n");
 			printf("|    ___|   _   |     __|   |   |\n");
 			printf("|    ___|       |__     |\\     / \n");
 			printf("|_______|___|___|_______| |___|  \n");
 			printf("                                 \n");
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 			printf(" _______ _______ _____ _______ _______ _______ \n");
 			printf("|   |   |    ___|     \\_     _|   |   |   |   |\n");
 			printf("|       |    ___|  --  ||   |_|   |   |       |\n");
@@ -216,13 +216,13 @@ int SelectLevel(void)
 			printf("|    ___|       |__     |\\     / \n");
 			printf("|_______|___|___|_______| |___|  \n");
 			printf("                                 \n");
-			SelectColour(206);
+			SelectColour(SelectedOptionColor);
 			printf(" _______ _______ _____ _______ _______ _______ \n");
 			printf("|   |   |    ___|     \\_     _|   |   |   |   |\n");
 			printf("|       |    ___|  --  ||   |_|   |   |       |\n");
 			printf("|__|_|__|_______|_____/_______|_______|__|_|__|\n");
 			printf("                                               \n");
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 			printf(" _______ _______ ______ _____  \n");
 			printf("|   |   |   _   |   __ \\     \\ \n");
 			printf("|       |       |      <  --  |\n");
@@ -241,12 +241,12 @@ int SelectLevel(void)
 			printf("|       |    ___|  --  ||   |_|   |   |       |\n");
 			printf("|__|_|__|_______|_____/_______|_______|__|_|__|\n");
 			printf("                                               \n");
-			SelectColour(206);
+			SelectColour(SelectedOptionColor);
 			printf(" _______ _______ ______ _____  \n");
 			printf("|   |   |   _   |   __ \\     \\ \n");
 			printf("|       |       |      <  --  |\n");
 			printf("|___|___|___|___|___|__|_____/ \n");
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 		}
 		nChoice = GetInput();
 			//Code to move space up
@@ -535,14 +535,14 @@ int PlayAgainScreen(void)
 		if (nCurrent == 1) 
 		{
 			CursorPosition(-10, -1);
-			SelectColour(206);
+			SelectColour(SelectedOptionColor);
 			printf(" ___ ___ _______ _______ \n");
 			printf("|   |   |    ___|     __|\n");
 			printf(" \\     /|    ___|__     |\n");
 			printf("  |___| |_______|_______|\n");
 			printf("\n");
 		
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 			printf(" _______ _______ \n");
 			printf("|    |  |       |\n");
 			printf("|       |   -   |\n");
@@ -558,14 +558,14 @@ int PlayAgainScreen(void)
 			printf("  |___| |_______|_______|\n");
 			printf("\n");
 			CursorPosition(-10, 4);
-			SelectColour(206);
+			SelectColour(SelectedOptionColor);
 
 			printf(" _______ _______ \n");
 			printf("|    |  |       |\n");
 			printf("|       |   -   |\n");
 			printf("|__|____|_______|\n");
 			printf("\n");
-			SelectColour(15);
+			SelectColour(BackGroundColor);
 		}
 
 		nChoice = GetInput();
