@@ -6,7 +6,6 @@
 // Final Review done on the 16th of November, 2015.
 
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
 #include<time.h>

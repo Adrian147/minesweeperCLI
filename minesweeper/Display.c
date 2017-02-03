@@ -6,7 +6,7 @@
 #else
 #include <unistd.h>
 #endif
-#include <conio.h>
+//#include<conio.h>
 #include"Header.h"
 
 //get arrowkey input
