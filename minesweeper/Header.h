@@ -15,6 +15,16 @@ enum ARROWKEY
 	ARROW_LEFT = 256 + 75,
 	ARROW_RIGHT = 256 + 77,
 };
+enum COLOR
+{
+	BoxColor = 125,
+	MineFieldElementColor = 240,
+	HoverSelectionColor = 180,
+	FlagColor = 156,
+	RevealedMinesFieldColor = 208,
+	BackGroundColor = 15,
+	SelectedOptionColor = 206
+};
 enum STATE
 {
 	WIN = 1,
